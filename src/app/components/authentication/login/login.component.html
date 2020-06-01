@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-content>
+
+        <img src="./../../../../assets/hexaware-2.png" width="100px">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" style="width:90%; padding-top:20px">
+            <h4>Log In</h4>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="f.email.errors && f.email.errors.required">Email is required</mat-error>
+                <mat-error *ngIf="f.email.errors && f.email.errors.email">Please provide a valid email address
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width-input">
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                <mat-error *ngIf="f.password.errors && f.password.errors.required">Password is required</mat-error>
+                <mat-error *ngIf="f.password.errors  && f.password.errors.minlength">Password must be at least 5
+                    characters</mat-error>
+            </mat-form-field>
+
+            <mat-error *ngIf="errorStatus">
+                The username and password is incorrect / {{errorMessage}}.
+            </mat-error>
+
+            <div class="mt-3">
+                <button mat-raised-button color="primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login</button>
+            </div>
+
+            <div style="text-align: left" class="mt-3">
+                <span><b>Demo Login</b></span> <br />
+                <span> Username : eve.holt@reqres.in</span> <br />
+                <span> Password : cityslicka</span>
+
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

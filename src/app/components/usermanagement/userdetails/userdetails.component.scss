@@ -1,0 +1,42 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+mat-form-field{
+    width:25% !important;
+    margin-bottom:5px;
+}
+
+@media screen and (max-width: 1024px) {
+    mat-form-field{
+        width:100% !important;
+    }
+  }
+
+  span:focus {
+    outline: none;
+    border: 0;
+  }
+  
+  button{
+    outline: none;
+    border: 0; 
+}
+
+
+.alignBtn{
+    display: table-cell;
+    padding-top:20px;
+  }
+
+  .alignBtn button{
+    display: table-cell;
+    margin-right: 8px;
+  }
+  
+
+  .loaderCenter{
+    position: absolute; top: 50%; left: 50%;
+  }
+  

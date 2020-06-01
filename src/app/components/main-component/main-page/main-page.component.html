@@ -1,0 +1,25 @@
+<mat-toolbar color="secondary">
+    <button mat-icon-button (click)="sidemenu.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <img src="./../../../../assets/hexaware-2.png" alt="" style="width:80px">
+    <span class="menu-spacer"></span>
+    <app-nav-bar></app-nav-bar>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidemenu [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56">
+        <mat-nav-list>
+            <app-menulist></app-menulist>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="container-fluid">
+            <app-breadcrumb></app-breadcrumb>
+            <router-outlet></router-outlet>
+            <!-- <app-footer></app-footer> -->
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

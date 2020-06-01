@@ -1,0 +1,51 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+body,
+html {
+  margin: 0;
+  padding: 0; 
+  font: 400 15px/24px Roboto, sans-serif;
+  background: #fafafa;
+  overflow-x: hidden;
+}
+
+
+body,
+input,
+select,
+textarea,
+body * {
+
+  box-sizing: border-box;
+ 
+}
+body::after, body::before,
+input::after,
+input::before,
+select::after,
+select::before,
+textarea::after,
+textarea::before,
+body *::after,
+body *::before {
+  box-sizing: border-box;
+}
+
+*{
+  margin:0px;
+  padding:0px; 
+  outline: none;
+}
+
+
+span:focus {
+  outline: none;
+  border: 0;
+}
+
+button{
+  outline: none;
+  border: 0;
+
+}
+

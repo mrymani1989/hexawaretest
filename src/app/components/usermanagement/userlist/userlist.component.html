@@ -1,0 +1,45 @@
+<div class="row" *ngIf="!loading">
+    <div class="col table-overflow">
+        <table class="table table-sm table-hover" [svData]="users" #sv="svDataTable" [svRowsOnPage]="5" svSortBy="name"
+            svSortOrder="asc">
+            <thead class="thead-light">
+                <tr>
+                    <th>
+                        <sv-default-sorter by="first_name">First Name</sv-default-sorter>
+                    </th>
+                    <th>
+                        <sv-default-sorter by="last_name">Last Name</sv-default-sorter>
+                    </th>
+                    <th>
+                        <sv-default-sorter by="email">Email</sv-default-sorter>
+                    </th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of sv.data let i = index;" (click)="onUserRowSelect(item)">
+                    <td [attr.id]="'firstName-' + i" [attr.name]="'firstName-' + i"> {{ item.first_name }} </td>
+                    <td [attr.id]="'lastName-' + i" [attr.name]="'lastName-' + i"> {{  item.last_name }} </td>
+                    <td [attr.id]="'email-' + i" [attr.name]="'email-' + i"> {{ item.email }} </td>
+
+                    <td><i class="material-icons" (click)="onUserRowSelect(item)">edit</i></td>
+
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <sv-bootstrap-paginator [rowsOnPageSet]="[5, 10, 25]"></sv-bootstrap-paginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div style="min-height:500px" *ngIf="loading">
+    <div class="loaderCenter">
+        <mat-spinner> </mat-spinner>
+    </div>
+</div>

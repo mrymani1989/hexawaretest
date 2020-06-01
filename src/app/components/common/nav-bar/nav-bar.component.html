@@ -1,0 +1,15 @@
+<span class="mr-2">{{firstName}}</span>
+<span mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="">
+  <img src="./../../../../assets/avatar-1.png" alt="avatar" class="rounded-circle img-thumbnail shadow-sm"
+    style="width:40px">
+</span>
+<mat-menu #profileMenu="matMenu">
+  <span mat-menu-item (click)="onEditUser()">
+    <mat-icon> <span class="fa fa-pencil"></span></mat-icon>
+    <span>Edit Profile</span>
+  </span>
+  <span mat-menu-item (click)="onLogout()">
+    <mat-icon> <span class="fa fa-sign-out"></span></mat-icon>
+    <span>Logout</span>
+  </span>
+</mat-menu>

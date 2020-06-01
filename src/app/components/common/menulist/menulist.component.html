@@ -1,0 +1,5 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/{{sideMenu.link}}" *ngFor="let sideMenu of sideMenuList">
+        <i [className]="sideMenu.iconName" aria-hidden="true"></i> {{sideMenu.name}}
+    </a>
+</mat-nav-list>
